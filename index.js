@@ -97,9 +97,9 @@ app.get('/loadtest/:count', function (req, res) {
         for(let i=0;i<count;i++){    
             try{
                 if(i % pics === 0 ){
-                        await page.goto(process.env.External);
-                        await new Promise(resolve => setTimeout(resolve, 1000));
-                        await page.screenshot({ path: `./screenshots/screenshot_${i}.png`, fullPage: true });             
+                    await page.goto(process.env.External);
+                    await new Promise(resolve => setTimeout(resolve, 1000));
+                     await page.screenshot({ path: `./screenshots/screenshot_${i}.png`, fullPage: true });             
                 }else{
                     await page.goto(process.env.External);
                     await new Promise(resolve => setTimeout(resolve, 10)); 
